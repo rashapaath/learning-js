@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+</head>
+<body>
+    <button onclick="addtocart('cofee');"><h1>Cofee</h1></button>
+    <button onclick="addtocart(`bagels`);"><h1>Bagels</h1></button>
+    <button onclick="addtocart(`soup`);"><h1>Soup</h1></button>
+    <button onclick="totalcalc();
+    console.log(`TAX(10%):${total/10}`);
+    console.log(`TOTAL COST:${total+total/10}`);
+    
+    "><h1>Total</h1></button>
+    <script>
+        //price object
+        let price={
+            cofee:5,
+            bagels:3,
+            soup:9
+        };
+        //count object
+        let count={
+            cofee:0,
+            bagels:0,
+            soup:0
+        };
+        //addtocart fn
+        function addtocart(item){
+            count[item]++;
+            console.log(`${count[item]} ${item} added to cart`);
+        }
+        //totalcalc fn
+        let total=0;
+        function totalcalc(){
+            
+            for(let elt in count){
+                total+=price[elt]*count[elt];
+            }
+            console.log(`total:${total}`);
+            count={
+                cofee:0,
+                bagels:0,
+                soup:0
+            };
+        }
+    </script>
+</body>
+</html>

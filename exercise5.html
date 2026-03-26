@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>items</h1>
+    <button onclick="
+    countc++;
+    console.log(`${countc} cofee added cart`);
+    ">Cofee</button>
+    <button
+    onclick="
+    countb++;
+    console.log(`${countb} bagels added to cart`);
+    "
+
+    >bagels</button>
+    <button
+    onclick="
+    counts++;
+    console.log(`${counts} soup added to cart`);
+    "
+    >soup</button>
+    <button
+    onclick="
+    cost+=cofee*countc+bagels*countb+soup*counts;;
+    console.log(`total cost is : $${cost}`);
+    countc=0;
+    countb=0;
+    counts=0;
+    "
+    >Total</button>
+    <script>
+        let name="rasha";
+        console.log(`my name is ${name}`);
+        let cofee=5;
+        let bagels=3;
+        let soup=9;
+        let countc=0;
+        let countb=0;
+        let counts=0;
+        let cost=0;
+    </script>
+</body>
+</html>
