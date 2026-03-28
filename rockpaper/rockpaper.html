@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ROCK PAPER SCISSOR</h1>
+    <button onclick="rps('rock')">ROCK</button>
+    <button onclick="rps('paper')">PAPER</button>
+    <button onclick="rps('scissor')">SCISSOR</button>
+    <h1 id="result"></h1>
+    <script>
+        function rps(choice){
+            let choices=['rock','paper','scissors'];
+            let compchoice=choices[Math.floor(Math.random()*3)];
+            let result="";
+            if(choices===compchoice){
+                result="TIE";
+            }else if(choice==='rock'&&compchoice==='scissors'||choice==='paper'&&compchoice==='rock'||choice==='scissors'&&compchoice==='paper'){
+                result="you win";
+            }
+            else{
+                result="you lose";
+            }
+            document.getElementById("result").innerText=`YOU:${choice}\nCOMPUTER:${compchoice}\n${result}`;
+        }
+    </script>
+
+</body>
+</html>
