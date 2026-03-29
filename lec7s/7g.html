@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" placeholder="enter length and unit">
+    <button onclick="converts(`miles`)">convert to miles</button>
+    <button onclick="converts(`km`)">convert to km</button>
+    <button onclick="converts(`feet`)">convert to feet</button>
+    <p id="result">result:</p>
+    <script>
+        function convert(length,unit,tounit){
+            let l2;
+            if(unit===tounit){
+                l2=length;
+            }
+            else if(unit==="miles"&&tounit=="km"){
+                l2=(length*1.609).toFixed(3);
+            }
+             else if(unit==="miles"&&tounit=="feet"){
+                l2=(length*5280).toFixed(3);
+
+            }
+             else if(unit==="km"&&tounit=="miles"){
+                l2=(length*0.621).toFixed(3);
+            }
+             else if(unit==="km"&&tounit=="feet"){
+                l2=(length*3280.84).toFixed(3);
+            }
+             else if(unit==="feet"&&tounit=="km"){
+                l2=(length*(0.0003048)).toFixed(3);
+            }
+             else if(unit==="feet"&&tounit=="miles"){
+                l2=(length*(1/5280)).toFixed(3);
+            }
+            else{
+                return 'enter valid length';
+            }
+            return `${length}${unit}=>${l2}${tounit}`;
+
+        }
+        function converts(tounit){
+            let input=document.getElementById("input").value.trim();
+            let length=parseFloat(input);
+            let unit=input.replace(/[^a-zA-Z]/g,"").trim().toLowerCase();
+            document.getElementById("result").innerText+=`\n${convert(length,unit,tounit)}`;
+
+        }
+    </script>
+</body>
+</html>
