@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" placeholder="enter the the temparature either c or f eg(10f)">
+    <button onclick="convert()">convert</button>
+    <h1 id="result">result:</h1>
+    <script>
+        function converttof(celsius){
+            return (celsius*(9/5))+32;
+        }
+        function converttoc(farenheit){
+            return (farenheit-32)*(5/9);
+        }
+        function converttotemp(temp,unit){
+            if(unit==='f'||unit==='F'){
+                return `${temp}${unit}=${converttoc(temp).toFixed(2)}C`;
+            }
+            else if(unit==='c'||unit==='C'){
+                return `${temp}${unit}=${converttof(temp).toFixed(2)}F`;
+            }
+            else{
+                return `enter valid temparature either farenheit or celsius`;
+            }
+            
+        }
+        function convert(){
+        let input=document.getElementById("input").value.trim();
+        let temp=parseFloat(input);
+        let unit=input.slice(-1);
+        document.getElementById("result").innerHTML+=`${converttotemp(temp,unit)}`;
+
+        }
+        
+    </script>
+</body>
+</html>
