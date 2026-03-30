@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ROCK PAPER SCISSOR</h1>
+    <button onclick="rps('rock')">ROCK</button>
+    <button onclick="rps('paper')">PAPER</button>
+    <button onclick="rps('scissor')">SCISSOR</button>
+    <button onclick="reset()">RESET SCORE</button>
+    <h1 id="result"></h1>
+    <script>
+        let scores=JSON.parse(localStorage.getItem('score'))||{
+            comp:0,
+            you:0
+        };//default operator
+
+        
+        function rps(choice){
+            let choices=['rock','paper','scissors'];
+            let compchoice=choices[Math.floor(Math.random()*3)];
+            let result="";
+            if(choice===compchoice){
+                result="TIE";
+            }else if(choice==='rock'&&compchoice==='scissors'||choice==='paper'&&compchoice==='rock'||choice==='scissors'&&compchoice==='paper'){
+                result="you win";
+                scores.you++;
+            }
+            else{
+                result="you lose";
+                scores.comp++;
+            }
+            localStorage.setItem('score',JSON.stringify(scores));
+            document.getElementById("result").innerText+=`YOU:${choice}\nCOMPUTER:${compchoice}\n${result}\n\nscoring:\nyour score:${scores.you}\ncomputer score:${scores.comp}\n\n\n`;
+        }
+        function reset(){
+            scores.you=0;
+            scores.comp=0;
+            document.getElementById("result").innerText+=`Game resetted\n`;
+            localStorage.removeItem('score',JSON.stringify(scores));
+            
+        }
+        
+    </script>
+
+</body>
+</html>
+

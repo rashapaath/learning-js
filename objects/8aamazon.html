@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+</head>
+<body>
+    <script>
+        const product={
+            name:'basketball',
+            price:2095
+        };
+        console.log(product);
+        product.price+=500;
+        console.log(product.price);
+        product['delivery-time']='3days';
+        console.log(product);
+        const product1={
+            name:'basketball',
+            price:200
+        }
+        const product2={
+            name:'shirt',
+            price:300
+        }
+        function compareprice(product1,product2){
+            if(product1.price<product2.price){
+                return product1;
+            }
+            else{
+                return product2;
+            }
+        }
+        function issameprdt(pdt1,pdt2){
+            if(pdt1.name===pdt2.name&&pdt1.price&&pdt2.price){
+                return true;
+            }else{
+                return false;
+            }
+
+        }
+        console.log(product1.name.toUpperCase());
+        console.log(product1.name.repeat(5));
+
+        console.log(compareprice(product1,product2));
+    </script>
+</body>
+</html>
