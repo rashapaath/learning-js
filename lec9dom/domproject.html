@@ -7,13 +7,47 @@
 </head>
 <body>
     <P>YouTube Subscribe Button</P>
-    <Button>subscribe</Button>
+    <Button class="subscribe" onclick="
+    subchange();
+    ">
+    subscribe
+</Button>
     <br><br><br>
     <p>Rock Paper Scissors</p>
-    <a href="../coinflipflop/coinflipflop.html">Click here</a>
+    <a href=".\domrockpaper.html">Click here</a>
     <br><br><br>
-    <p>Amazon Shipping Calculator</p><br>
-    <p>Order under $40=+$10 shipping</p>
+    <p>Amazon Shipping Calculator<br><br>
+    Order under $40=+$10 shipping.<br><br>
+    Orders over $40=FREE shipping.</p>
+    <input  id="cost" type="number" placeholder="cost of order">  
+    <button class="calculate" onclick="calculate();
+    ">Calculate</button><br>
+    <p id="result"></p><br>
+    <a href="https://supersimple.dev/projects/dom/">CSS version of these project</a>
+    <script>
+        function subchange(){
+            let sub=document.querySelector('.subscribe');
+            if(sub.innerText==='subscribe'){
+            sub.innerText='subscribed';
+            }else{
+            sub.innerText='subscribe';
+            }
+            
+
+        }
+        function calculate(){
+            let cost=parseFloat(document.getElementById('cost').value);
+
+            if(cost<40){
+            cost+=10;
+            }
+            document.getElementById('result').innerHTML=`$${cost}`;
+
+
+        }
+    </script>
+
+
 
 </body>
 </html>

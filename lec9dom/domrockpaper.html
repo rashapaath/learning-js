@@ -9,13 +9,14 @@
     <h1>ROCK PAPER SCISSOR</h1>
     <button onclick="rps('rock')">ROCK</button>
     <button onclick="rps('paper')">PAPER</button>
-    <button onclick="rps('scissor')">SCISSOR</button><br>
-    <h1 id="result"></h1><br>
+    <button onclick="rps('scissors')">SCISSOR</button><br>
+    <p id="result"></p><br>
     <button onclick="reset()">RESET SCORE</button>
     <script>
         let scores=JSON.parse(localStorage.getItem('score'))||{
-            comp:0,
-            you:0
+            lose:0,
+            win:0,
+            tie:0
         };//default operator
 
         
@@ -25,20 +26,22 @@
             let result="";
             if(choice===compchoice){
                 result="TIE";
+                scores.tie++;
             }else if(choice==='rock'&&compchoice==='scissors'||choice==='paper'&&compchoice==='rock'||choice==='scissors'&&compchoice==='paper'){
                 result="you win";
-                scores.you++;
+                scores.win++;
             }
             else{
                 result="you lose";
-                scores.comp++;
+                scores.lose++;
             }
             localStorage.setItem('score',JSON.stringify(scores));
-            document.getElementById("result").innerText+=`YOU:${choice}\nCOMPUTER:${compchoice}\n${result}\n\nscoring:\nyour score:${scores.you}\ncomputer score:${scores.comp}\n\n\n`;
+            document.getElementById("result").innerText=`Wins:${scores.win} || Loses:${scores.lose} || Ties:${scores.tie}\n`;
         }
         function reset(){
-            scores.you=0;
-            scores.comp=0;
+            scores.win=0;
+            scores.lose=0;
+            scores.tie=0;
             document.getElementById("result").innerText+=`Game resetted\n`;
             localStorage.removeItem('score',JSON.stringify(scores));
             

@@ -6,6 +6,23 @@
     <title>DOM</title>
 </head>
 <body>
-    
+    <p>hello</p>
+    <h>
+        hi
+    </h>
+    <script>
+        //dom properties
+        console.log(document.title);
+        console.log(document.body);
+        console.log(document.body.innerHTML);
+        //document.body="good morning";error
+        //document.body.innerHTML="good morning";not error//but it wil make all html elements null
+
+        //dom methods
+        console.log(document.querySelector('h'));
+        document.querySelector('p').innerHTML="afff";
+        const btnelt=document.querySelector('p').innerHTML;
+        console.log(btnelt);
+    </script>
 </body>
 </html>
