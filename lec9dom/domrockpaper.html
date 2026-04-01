@@ -18,8 +18,7 @@
             win:0,
             tie:0
         };//default operator
-
-        
+        document.getElementById("result").innerHTML=`Wins:${scores.win} || Loses:${scores.lose} || Ties:${scores.tie}\n`;
         function rps(choice){
             let choices=['rock','paper','scissors'];
             let compchoice=choices[Math.floor(Math.random()*3)];
@@ -36,14 +35,15 @@
                 scores.lose++;
             }
             localStorage.setItem('score',JSON.stringify(scores));
-            document.getElementById("result").innerText=`Wins:${scores.win} || Loses:${scores.lose} || Ties:${scores.tie}\n`;
+            document.getElementById("result").innerHTML=`Wins:${scores.win} || Loses:${scores.lose} || Ties:${scores.tie}\n`;
         }
         function reset(){
             scores.win=0;
             scores.lose=0;
             scores.tie=0;
-            document.getElementById("result").innerText+=`Game resetted\n`;
-            localStorage.removeItem('score',JSON.stringify(scores));
+            localStorage.removeItem('score');
+            document.getElementById("result").innerText=`   \n`;
+            document.getElementById("result").innerText=`Wins:${scores.win} || Loses:${scores.lose} || Ties:${scores.tie}         Game resetted\n`;
             
         }
         

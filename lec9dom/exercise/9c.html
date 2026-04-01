@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="h" onclick="display('heads');">HEADS</button><button class="t" onclick="display('tails')">TAILS</button>
+    <p class="d"></p>
+    <script>
+        function display(elt){
+            document.querySelector('.d').innerHTML=`you chose ${elt}`;
+        }
+
+    </script>
+</body>
+</html>
