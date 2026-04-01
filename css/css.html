@@ -18,6 +18,17 @@
             background-color:rgb(231, 228, 228);
             color:black;
         }
+        #cost{
+            padding:10px;
+        }
+        .calculate{
+            padding:10px;
+            background-color:green;
+            color:white;
+            border:none;
+            font-size:15px;
+            padding:10.5px 15px;
+        }
     </style>
 </head>
 <body>
@@ -26,25 +37,15 @@
     subchange();
     ">
     Subscribe
-</Button>
-    <br><br><br>
+    </Button>
     <p>
-        Rock Paper Scissors
-    </p>
-    <a 
-        href=".\domrockpaper.html">Click here
-    </a>
-    <p>
-        Amazon Shipping Calculator<br><br>
-        Order under $40=+$10 shipping.<br><br>
-        Orders over $40=FREE shipping.</p>
+        Amazon Shipping Calculator</p>
     <input  id="cost" type="number" placeholder="cost of order" onkeydown="if(event.key==='Enter'){
         calculate();
     }">  
     <button class="calculate" onclick="calculate();
     ">Calculate</button><br>
     <p id="result"></p><br>
-    <a href="https://supersimple.dev/projects/dom/">CSS version of these project</a>
     <script>
         function subchange(){
             let subElt=document.querySelector('.subscribe');
@@ -59,12 +60,12 @@
 
         }
         function calculate(){
-            let cost=parseFloat(document.getElementById('cost').value);
-
-            if(cost<40){
-            cost+=10;
+            let input=(document.getElementById('cost'));
+            let cost=Number(input.value)*100;
+            if(cost<4000){
+            cost+=1000;
             }
-            document.getElementById('result').innerHTML=`$${cost}`;
+            document.getElementById('result').innerHTML=`$${cost/100}`;
 
 
         }
