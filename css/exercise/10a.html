@@ -4,9 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="btn.css">
 </head>
 <body>
     <button class="amazon">Add to Cart</button><br>
-    <button cl
+    <button class="uber request">Request now</button>
+    <button class="uber schedule">Schedule for later</button><br>
+    <button class="js-button">Test</button><br>
+    <button class="e gaming" onclick="toggling('.gaming');">Gaming</button>
+    <button class="e music" onclick="toggling('.music');">Music</button>
+    <button class="e tech" onclick="toggling('.tech')">Tech</button>
+    <script>
+        let btn=document.querySelector('.js-button');
+        console.log(btn.classList.contains("js-button"));
+        function toggling(t){
+            let togglebtn=document.querySelector(t);
+            /*if(!togglebtn.classList.contains('is-toggled')){
+                togglebtn.classList.add('is-toggled');
+            }
+            else{
+                togglebtn.classList.remove('is-toggled');
+            }*/
+           //togglebtn.classList.toggle('is-toggle');
+           if(!togglebtn.classList.contains('is-toggled')){
+                containstogglebtn();
+                togglebtn.classList.add('is-toggled');
+           }
+           else{
+            togglebtn.classList.remove('is-toggled');
+
+           }
+           function containstogglebtn(){
+            prev=document.querySelector('.is-toggled');
+            if(prev){
+                prev.classList.remove('is-toggled');
+            }
+            
+           }
+
+        }
+        
+    </script>
 </body>
 </html>

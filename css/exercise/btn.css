@@ -1,0 +1,36 @@
+.amazon{
+    background-color:rgb(238, 201, 18);
+    border:none;
+    border-radius:18px;
+    padding:5px 50px;
+    font-size:20px;
+    margin:10px;
+
+}
+.uber{
+    border:none;
+    border-radius:5px;
+    padding: 12px 15px;
+    font-weight:bold;
+    margin:10px;
+}
+.request{
+    background-color:black;
+    color:white;
+
+}
+.schedule{
+background-color:rgba(159, 156, 156, 0.356);
+}
+.e{
+    border:none;
+    border-radius:5px;
+    padding:10px;
+    background-color:rgb(234, 227, 227);
+    margin:5px;
+}
+.is-toggled{
+    color:rgb(234, 227, 227);
+    background-color:black;
+
+}

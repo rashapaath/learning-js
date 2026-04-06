@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and loop</title>
+</head>
+<body>
+    <script>
+        let i=1;
+    while(i<=5){
+        console.log(i);
+        i++;
+    }
+    for(let i=1;i<=5;i++){
+        console.log(i);
+    }
+    let number=0;
+    while(number<0.5){
+        console.log(number);
+        number=Math.random();
+        
+       }
+    let arrs=[1,1,3];
+    let sum=0;
+    for(let i=0;i<arrs.length;i++){
+        sum+=arrs[i];
+    }
+    console.log
+    (sum);
+    const nummi=[10,20,30];
+    nummi[2]=99;
+    console.log(lastrender(nummi));
+    function lastrender(arr){
+        return arr[arr.length-1];
+    }
+    function swap(arr){
+        let temp=arr[0];
+        arr[0]=arr[arr.length-1];
+        arr[arr.length-1]=temp;
+        return arr;
+    }
+    console.log(swap(nummi));
+    let j=0;
+    while(j<=10){
+        console.log(j);
+        j+=2;
+    }
+    for(let i=5;i>=0;i--){
+        console.log(i);
+    }
+    function increment(arr){
+        for(let i=0;i<arr.length;i++){
+            arr[i]=arr[i]+1;
+        }
+        return arr;
+    }
+    console.log(increment(nummi));
+    let arr2=[2,3,4];
+    function add(arr1,arr2){
+        for(let i=0;i<arr1.length;i++){
+            arr1[i]+=arr2[i];
+           
+        }
+        return arr1;
+    }
+    console.log(add(nummi,arr2));
+    function countpos(arr){
+        count=0;
+        for(let k=0;k<arr.length;k++){
+            if(arr[k]>=0){
+                count++;
+            }
+        }
+        return count;
+    }console.log(countpos([10,-20,-4,0,9,8]));
+    function minmax(nums){
+        let result={
+            min:null,
+            max:null
+        };
+        for(let i=0;i<nums.length;i++){
+            let val=nums[i];
+            if(result.min==null||val<=result.min){
+                result.min=val;
+            }
+            if(result.max==null||val>=result.max){
+                result.max=val;
+            }
+        }
+        return result;
+    }
+    console.log(minmax([1,-3,-4,0,34,90,0.9]));
+    console.log(minmax([3]));
+    console.log(minmax([]));
+    function countwords(nums){
+        let result={};
+        for(let i=0;i<nums.length;i++){
+            let word=nums[i];
+            if(!result[word]){
+                result[word]=1;
+            }else{
+                result[word]++;
+            }
+        }
+        return result;
+    }
+    console.log(countwords(['apple',"oops","orange",'orange',"oops",'guava']));
+    </script>
+</body>
+</html>
