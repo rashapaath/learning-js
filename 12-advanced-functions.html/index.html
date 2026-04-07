@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced functions</title>
+</head>
+<body>
+    <script>
+        function fn_name(elt1,elt2){
+            return elt1+elt2;
+        }
+        let fn1=function greet(){
+            console.log("hey bae");
+        }
+        let fn2=()=>{
+            console.log("hey bae");
+        }
+        //passing function to another function
+        function greet(){
+            return "HELLO,GOOD MORNING";
+        }
+        
+        function print(fn){
+            console.log(fn());
+        }
+        print(greet);
+        function run(fn){
+            fn();
+        }
+        run(
+            function(){
+                console.log('hello');
+            }
+        );
+    </script>
+</body>
+</html>

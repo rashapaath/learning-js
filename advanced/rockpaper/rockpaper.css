@@ -1,0 +1,33 @@
+    body{
+            background-color:black;
+            color:white;
+            font-family:arial;
+        }
+        .img-btn{
+            background-color:transparent;
+            border:solid 2px white;
+            border-radius:50%;
+            padding:35px;
+            margin:10px;
+        }
+        img{
+            height:60px;
+        }
+        .result{
+            font-size:25px;
+            font-weight:bold;
+            margin-top:70px;
+        }
+        .moves{
+            
+        }
+        .dashboard{
+            margin-top:80px;
+            margin-bottom:5px;
+        }
+        .reset-btn,.autobtn{
+            padding:10px 15px;;
+            font-size:16px;
+            cursor:pointer;
+            margin-top:0px;
+        }

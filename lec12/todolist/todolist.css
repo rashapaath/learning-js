@@ -1,0 +1,17 @@
+.todo3{
+    padding:10px;
+    margin-right:10px;
+}
+.addbutton{
+    background-color:green;
+    color:white;
+    border:none;
+    padding:12px 30px;
+}
+.dlt{
+    background-color:rgb(129, 10, 10)
+}
+.todo-grid{
+    dispaly:grid;
+    grid-template-columns:repear(3,1fr)
+}
